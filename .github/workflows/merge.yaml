@@ -1,0 +1,18 @@
+name: Development to QA branch merge the yml file.
+on:
+  push:
+    branches: [ development,QA ]
+      
+jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge Development -> QA
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: Development
+          target_branch: staging
+          github_token: ${{ github.token }}
