@@ -1,7 +1,7 @@
 name: Development to QA branch merge the yml file.
 on:
   push:
-    branches: [ Development,QA ]
+    branches: [ development,QA ]
       
 jobs:
   sync-branch:
@@ -13,6 +13,8 @@ jobs:
         uses: devmasx/merge-branch@master
         with:
           type: now
-          from_branch: Development
-          target_branch: staging
+          from_branch: development
+          target_branch: QA
           github_token: ${{ github.token }}
+          
+
