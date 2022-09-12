@@ -1,7 +1,7 @@
 name: Development to QA branch merge the yml file.
 on:
   push:
-    branches: [ development,QA ]
+    branches: [ Development,QA ]
       
 jobs:
   sync-branch:
